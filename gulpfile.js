@@ -21,3 +21,9 @@ gulp.task('less', function() {
              .on('error', logError)
              .pipe(gulp.dest('dist/css'));
 });
+
+gulp.task('html', function() {
+  return gulp.src('src/index.html').pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['html', 'less']);
