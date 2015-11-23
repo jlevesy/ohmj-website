@@ -56,6 +56,7 @@ gulp.task('clean', function() {
 gulp.task('serve', ['clean','build'], function() {
   gulp.src('dist').pipe(server({
     host: '0.0.0.0',
+    port: process.env.PORT || 8000
   }));
 });
 
