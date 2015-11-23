@@ -16,6 +16,7 @@
     "gulp-less": "^3.0.5",
     "gulp-livereload": "^3.8.1",
     "gulp-notify": "^2.2.0",
+    "gulp-webserver": "^0.9.1",
     "st": "^1.0.0"
   }
 }

@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
   bower = require('gulp-bower'),
   less = require('gulp-less'),
+  server = require('gulp-webserver')
   st = require('st'),
   del = require('del');
 
@@ -50,6 +51,12 @@ gulp.task('watch', ['build'], function() {
 
 gulp.task('clean', function() {
   return del(['dist/*'])
+});
+
+gulp.task('serve', ['clean','build'], function() {
+  gulp.src('dist').pipe(server({
+    host: '0.0.0.0',
+  }));
 });
 
 gulp.task('default', ['clean', 'build', 'watch'])
