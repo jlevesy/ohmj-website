@@ -21,7 +21,7 @@ gulp.task('less', function() {
                 ]
              }))
              .on('error', logError)
-             .pipe(gulp.dest('dist/css'))
+             .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('fonts', function() {
@@ -29,12 +29,19 @@ gulp.task('fonts', function() {
 	     .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('html', function() {
-  return gulp.src('src/index.html')
-             .pipe(gulp.dest('dist'))
+gulp.task('js', function() {
+  return gulp.src([
+    __dirname + '/bower_components/bootstrap/dist/js/bootstrap.min.js',
+    __dirname + '/bower_components/jquery/dist/jquery.min.js'
+  ]).pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('build', ['html', 'fonts', 'less']);
+gulp.task('html', function() {
+  return gulp.src('src/index.html')
+             .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['html', 'fonts', 'js', 'less']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/less/**/*.less', ['less']);
