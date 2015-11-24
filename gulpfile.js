@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
   bower = require('gulp-bower'),
   less = require('gulp-less'),
-  server = require('gulp-webserver')
+  connect = require('gulp-connect'),
   st = require('st'),
   del = require('del');
 
@@ -22,7 +22,8 @@ gulp.task('less', function() {
                 ]
              }))
              .on('error', logError)
-             .pipe(gulp.dest('dist/css'));
+             .pipe(gulp.dest('dist/css'))
+             .pipe(connect.reload());
 });
 
 gulp.task('fonts', function() {
@@ -39,7 +40,8 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src('src/index.html')
-             .pipe(gulp.dest('dist'));
+             .pipe(gulp.dest('dist'))
+             .pipe(connect.reload());
 });
 
 gulp.task('build', ['html', 'fonts', 'js', 'less']);
@@ -53,11 +55,21 @@ gulp.task('clean', function() {
   return del(['dist/*'])
 });
 
-gulp.task('serve', ['clean','build'], function() {
-  gulp.src('dist').pipe(server({
+gulp.task('serve', function() {
+  connect.server({
     host: '0.0.0.0',
-    port: process.env.PORT || 8000
-  }));
+    port:  8000,
+    root: 'dist/',
+    livereload: true
+  });
 });
 
-gulp.task('default', ['clean', 'build', 'watch'])
+gulp.task('prod-serve', ['clean','build'], function() {
+  connect.server({
+    host: '0.0.0.0',
+    root: 'dist/',
+    port: process.env.PORT || 8000
+  });
+});
+
+gulp.task('default', ['clean', 'build', 'watch', 'serve'])
