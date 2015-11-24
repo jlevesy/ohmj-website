@@ -44,7 +44,7 @@ gulp.task('html', function() {
              .pipe(connect.reload());
 });
 
-gulp.task('build', ['html', 'fonts', 'js', 'less']);
+gulp.task('build', ['bower', 'html', 'fonts', 'js', 'less']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/less/**/*.less', ['less']);
