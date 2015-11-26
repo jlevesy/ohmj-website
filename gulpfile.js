@@ -52,11 +52,11 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('clean', function() {
-  return del(['dist/*'])
+  return del(['dist/**/*'])
 });
 
 gulp.task('serve', function() {
-  connect.server({
+  return connect.server({
     host: '0.0.0.0',
     port:  8000,
     root: 'dist/',
@@ -65,7 +65,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('prod-serve', ['clean','build'], function() {
-  connect.server({
+  return connect.server({
     host: '0.0.0.0',
     root: 'dist/',
     port: process.env.PORT || 8000
