@@ -4,7 +4,7 @@
 
   .item {
     height: 500px;
-    background-color: #777;
+    background-color: @black;
   }
 
   .carousel-caption {
@@ -12,12 +12,22 @@
   }
 
   .carousel-inner {
-    > .item {
-      > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 100%;
+    .item {
+      .slide-1 {
+        background-image: url('../images/slide_1.jpg');
+      }
+
+      .slide-2 {
+        background-image: url('../images/slide_2.jpg');
+      }
+
+      .slide-3 {
+        background-image: url('../images/slide_3.jpg');
+      }
+
+      .container {
+        background-size: cover;
+        background-position: 50%;
         height: 500px;
       }
     }

@@ -26,6 +26,11 @@ gulp.task('less', function() {
              .pipe(connect.reload());
 });
 
+gulp.task('images', function () {
+  return gulp.src('src/images/*').pipe(gulp.dest('dist/images'))
+
+});
+
 gulp.task('fonts', function() {
   return gulp.src(__dirname + '/bower_components/bootstrap/fonts/*')
 	     .pipe(gulp.dest('dist/fonts'));
@@ -44,7 +49,7 @@ gulp.task('html', function() {
              .pipe(connect.reload());
 });
 
-gulp.task('build', ['bower', 'html', 'fonts', 'js', 'less']);
+gulp.task('build', ['bower', 'html','images', 'fonts', 'js', 'less']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/less/**/*.less', ['less']);
