@@ -10,6 +10,6 @@ $(function() {
   scrollClass(
     '.navbar',
     'navbar-transparent',
-    450
+    400
   );
 });
