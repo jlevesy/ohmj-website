@@ -5,20 +5,19 @@ var gulp = require('gulp'),
   st = require('st'),
   del = require('del');
 
-
 logError = function(error) {
   console.log(error)
 }
 
-gulp.task('bower', function() {
+gulp.task('bower', ['clean'], function() {
   return bower().pipe(gulp.dest('bower_components'));
 });
 
-gulp.task('less', function() {
+gulp.task('less', ['clean'], function() {
   return gulp.src('src/less/app.less')
              .pipe(less({
                 paths: [
-                  __dirname + '/bower_components/bootstrap/less',
+                  'bower_components/bootstrap/less',
                 ]
              }))
              .on('error', logError)
@@ -26,24 +25,23 @@ gulp.task('less', function() {
              .pipe(connect.reload());
 });
 
-gulp.task('images', function () {
+gulp.task('images', ['clean'], function () {
   return gulp.src('src/images/*').pipe(gulp.dest('dist/images'))
-
 });
 
-gulp.task('fonts', function() {
-  return gulp.src(__dirname + '/bower_components/bootstrap/fonts/*')
-	     .pipe(gulp.dest('dist/fonts'));
+gulp.task('fonts', ['clean'], function() {
+  return gulp.src('bower_components/bootstrap/fonts/*')
+    .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['clean'], function() {
   return gulp.src([
-    __dirname + '/bower_components/bootstrap/dist/js/bootstrap.min.js',
-    __dirname + '/bower_components/jquery/dist/jquery.min.js'
+    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+    'bower_components/jquery/dist/jquery.min.js'
   ]).pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('html', function() {
+gulp.task('html', ['clean'], function() {
   return gulp.src('src/index.html')
              .pipe(gulp.dest('dist'))
              .pipe(connect.reload());
@@ -51,13 +49,13 @@ gulp.task('html', function() {
 
 gulp.task('build', ['bower', 'html','images', 'fonts', 'js', 'less']);
 
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', function() {
   gulp.watch('src/less/**/*.less', ['less']);
   gulp.watch('src/*.html', ['html']);
 });
 
 gulp.task('clean', function() {
-  return del(['dist/**/*'])
+  return del(['dist/**/*']);
 });
 
 gulp.task('serve', function() {
