@@ -37,7 +37,8 @@ gulp.task('fonts', ['clean'], function() {
 gulp.task('js', ['clean'], function() {
   return gulp.src([
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/jquery/dist/jquery.min.js'
+    'bower_components/jquery/dist/jquery.min.js',
+    'src/js/**/*.js'
   ]).pipe(gulp.dest('dist/js'));
 });
 
@@ -50,8 +51,9 @@ gulp.task('html', ['clean'], function() {
 gulp.task('build', ['bower', 'html','images', 'fonts', 'js', 'less']);
 
 gulp.task('watch', function() {
-  gulp.watch('src/less/**/*.less', ['less']);
-  gulp.watch('src/*.html', ['html']);
+  gulp.watch('src/less/**/*.less', ['build']);
+  gulp.watch('src/*.html', ['build']);
+  gulp.watch('src/js/**/*.js', ['build']);
 });
 
 gulp.task('clean', function() {
