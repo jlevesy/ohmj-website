@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-  bower = require('gulp-bower'),
   less = require('gulp-less'),
   connect = require('gulp-connect'),
   st = require('st'),
@@ -8,10 +7,6 @@ var gulp = require('gulp'),
 logError = function(error) {
   console.log(error)
 }
-
-gulp.task('bower', ['clean'], function() {
-  return bower().pipe(gulp.dest('bower_components'));
-});
 
 gulp.task('less', ['clean'], function() {
   return gulp.src('src/less/app.less')
@@ -48,7 +43,7 @@ gulp.task('html', ['clean'], function() {
              .pipe(connect.reload());
 });
 
-gulp.task('build', ['bower', 'html','images', 'fonts', 'js', 'less']);
+gulp.task('build', ['html','images', 'fonts', 'js', 'less']);
 
 gulp.task('watch', function() {
   gulp.watch('src/less/**/*.less', ['build']);
