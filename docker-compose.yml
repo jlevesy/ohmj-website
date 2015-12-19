@@ -4,6 +4,8 @@ joomla:
     - joomladb:mysql
   ports:
     - 8080:80
+  volumes:
+    - ./dist:/var/www/html/templates/ohmj
 
 joomladb:
   image: mysql:5.6
