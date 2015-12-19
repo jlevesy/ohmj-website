@@ -16,17 +16,17 @@ gulp.task('less', ['clean'], function() {
                 ]
              }))
              .on('error', logError)
-             .pipe(gulp.dest('dist/css'))
+             .pipe(gulp.dest('dist/static/css'))
              .pipe(connect.reload());
 });
 
 gulp.task('images', ['clean'], function () {
-  return gulp.src('src/images/*').pipe(gulp.dest('dist/images'))
+  return gulp.src('src/images/*').pipe(gulp.dest('dist/static/images'))
 });
 
 gulp.task('fonts', ['clean'], function() {
   return gulp.src('bower_components/bootstrap/fonts/*')
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('dist/static/fonts'));
 });
 
 gulp.task('js', ['clean'], function() {
@@ -34,12 +34,12 @@ gulp.task('js', ['clean'], function() {
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/jquery/dist/jquery.min.js',
     'src/js/**/*.js'
-  ]).pipe(gulp.dest('dist/js'));
+  ]).pipe(gulp.dest('dist/static/js'));
 });
 
 gulp.task('html', ['clean'], function() {
-  return gulp.src('src/index.html')
-             .pipe(gulp.dest('dist'))
+  return gulp.src('src/static/index.html')
+             .pipe(gulp.dest('dist/static'))
              .pipe(connect.reload());
 });
 
@@ -59,7 +59,7 @@ gulp.task('serve', function() {
   return connect.server({
     host: '0.0.0.0',
     port:  8000,
-    root: 'dist/',
+    root: 'dist/static',
     livereload: true
   });
 });
@@ -67,7 +67,7 @@ gulp.task('serve', function() {
 gulp.task('prod-serve', ['clean','build'], function() {
   return connect.server({
     host: '0.0.0.0',
-    root: 'dist/',
+    root: 'dist/static',
     port: process.env.PORT || 8000
   });
 });
