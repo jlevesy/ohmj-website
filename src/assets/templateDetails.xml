@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.1" type="template">
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
   <name>ohmj</name>
-  <creationDate>2015-12-19</creationDate>
+  <creationDate>15 December 2015</creationDate>
   <author>OHMJ</author>
   <authorEmail>contact@ohmj.fr</authorEmail>
-  <copyright>2015 OHMJ</copyright>
-  <license>GNU/GPL</license>
-  <version>1.0.0</version>
-  <description>Template for OHMJ website</description>
+  <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <version>3.1.0</version>
+  <description>TPL_OHMJ_XML_DESCRIPTION</description>
   <files>
+    <folder>css</folder>
+    <folder>html</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+    <folder>language</folder>
     <filename>index.php</filename>
     <filename>templateDetails.xml</filename>
-    <folder>images</folder>
-    <folder>css</folder>
+    <filename>jsstrings.php</filename>
+    <filename>error.php</filename>
   </files>
   <positions>
-    <position>breadcrumb</position>
-    <position>left</position>
-    <position>right</position>
-    <position>top</position>
-    <position>user1</position>
-    <position>user2</position>
-    <position>user3</position>
-    <position>user4</position>
-    <position>footer</position>
+    <position>position-1</position>
+    <position>position-2</position>
+    <position>position-3</position>
+    <position>debug</position>
   </positions>
+
+  <languages folder="language">
+    <language tag="fr-FR">fr-FR/fr-FR.tpl_ohmj.ini</language>
+    <language tag="fr-FR">fr-FR/fr-FR.tpl_ohmj.sys.ini</language>
+  </languages>
 </extension>
