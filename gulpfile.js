@@ -8,7 +8,7 @@ logError = function(error) {
   console.log(error)
 }
 
-gulp.task('less', ['clean'], function() {
+gulp.task('less', function() {
   return gulp.src('src/less/app.less')
              .pipe(less({
                 paths: [
@@ -21,19 +21,19 @@ gulp.task('less', ['clean'], function() {
              .pipe(connect.reload());
 });
 
-gulp.task('images', ['clean'], function () {
+gulp.task('images', function () {
   return gulp.src('src/images/*')
              .pipe(gulp.dest('dist/static/images'))
              .pipe(gulp.dest('dist/joomla/images'))
 });
 
-gulp.task('fonts', ['clean'], function() {
+gulp.task('fonts', function() {
   return gulp.src('bower_components/bootstrap/fonts/*')
     .pipe(gulp.dest('dist/static/fonts'))
     .pipe(gulp.dest('dist/joomla/fonts'));
 });
 
-gulp.task('js', ['clean'], function() {
+gulp.task('js', function() {
   return gulp.src([
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/jquery/dist/jquery.min.js',
@@ -42,18 +42,18 @@ gulp.task('js', ['clean'], function() {
     .pipe(gulp.dest('dist/joomla/js'));
 });
 
-gulp.task('html', ['clean'], function() {
+gulp.task('html', function() {
   return gulp.src('src/static/index.html')
              .pipe(gulp.dest('dist/static'))
              .pipe(connect.reload());
 });
 
-gulp.task('php', ['clean'], function() {
+gulp.task('php', function() {
   return gulp.src('src/php/**/*.php')
              .pipe(gulp.dest('dist/joomla'))
 });
 
-gulp.task('assets', ['clean'], function() {
+gulp.task('assets', function() {
   return gulp.src('src/assets/*')
              .pipe(gulp.dest('dist/joomla'))
 });
