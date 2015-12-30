@@ -37,5 +37,8 @@ defined('_JEXEC') or die( 'Restricted Access')
     <jdoc:include type="component" />
     <jdoc:include type="modules" name="position-3" />
     <jdoc:include type="modules" name="debug" style="none" />
+    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.min.js"></script>
+    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/scroll-watcher.js"></script>
   </body>
 </html>
