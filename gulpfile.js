@@ -12,7 +12,7 @@ gulp.task('less', function() {
   return gulp.src('src/less/app.less')
              .pipe(less({
                 paths: [
-                  'bower_components/bootstrap/less',
+                  'node_modules/bootstrap-less/bootstrap',
                 ]
              }))
              .on('error', logError)
@@ -35,8 +35,8 @@ gulp.task('fonts', function() {
 
 gulp.task('js', function() {
   return gulp.src([
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap-less/js/bootstrap.min.js',
+    'node_modules/jquery/dist/jquery.min.js',
     'src/js/**/*.js'
   ]).pipe(gulp.dest('dist/static/js'))
     .pipe(gulp.dest('dist/joomla/js'));
@@ -89,4 +89,4 @@ gulp.task('prod-serve', ['clean','build'], function() {
   });
 });
 
-gulp.task('default', ['clean', 'build', 'watch', 'serve'])
+gulp.task('default', ['build', 'watch', 'serve'])

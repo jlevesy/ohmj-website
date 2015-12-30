@@ -4,20 +4,19 @@
   "description": "Website for OHMJ",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bower": "^1.6.5",
+    "bootstrap-less": "^3.3.8",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
     "gulp-less": "^3.0.5",
     "gulp-notify": "^2.2.0",
-    "gulp-connect": "^2.2.0",
+    "jquery": "^2.1.4",
     "st": "^1.0.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
