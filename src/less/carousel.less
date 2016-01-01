@@ -28,6 +28,14 @@
     h1, h2, h3, h4, h4, p, li {
       margin-top: @padding-large-vertical;
       color: @white;
+
+      a {
+        color: @white;
+        &:hover, &:focus {
+          color: @gray-lighter;
+          text-decoration: none;
+        }
+      }
     }
     position: absolute;
     padding: @padding-large-vertical;

@@ -5,7 +5,6 @@ JHtml::_('behavior.caption');
 ?>
 <?php if ($this->params->get('show_page_heading') != 0) : ?>
 <?php endif; ?>
-<?php $leadingcount = 0; ?>
 <?php if (!empty($this->lead_items)) : ?>
   <div id="main-carousel"
        class="carousel big-carousel slide"
@@ -25,17 +24,12 @@ JHtml::_('behavior.caption');
     <div class="carousel-inner" role="listbox">
       <?php $item_idx = 0; ?>
       <?php foreach ($this->lead_items as &$item) : ?>
-        <div class="item <?php echo ($item_idx == 0 ? 'active' : ''); ?>">
-          <div class="container slide-<? echo $item_idx ?>">
-            <div class="carousel-panel carousel-panel-left carousel-panel-top">
-              <?php
-                $this->item = &$item;
-                echo $this->loadTemplate('item');
-              ?>
-            </div>
-          </div>
-        </div>
-        <?php $item_idx++; ?>
+        <?php
+          $this->item = &$item;
+          $this->idx = &$item_idx;
+          echo $this->loadTemplate('carousel_delegate');
+          $item_idx++;
+        ?>
       <?php endforeach; ?>
       <a class="left carousel-control"
          href="#main-carousel"
