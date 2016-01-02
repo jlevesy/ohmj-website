@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-  <name>OHMJ Carousel</name>
+  <name>ohmj-carousel</name>
+  <creationDate>15 December 2015</creationDate>
+  <authorEmail>contact@ohmj.fr</authorEmail>
   <author>OHMJ</author>
   <version>1.0.0</version>
   <description>Carousel for banner, use with OHMJ theme</description>
