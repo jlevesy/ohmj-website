@@ -28,7 +28,7 @@ defined('_JEXEC') or die( 'Restricted Access')
           <a class="navbar-brand" href="#">OHMJ</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <jdoc:include type="modules" name="position-1" style="none" />
+          <jdoc:include type="modules" name="navigation" style="none" />
         </div>
       </nav>
     <?php endif; ?>
