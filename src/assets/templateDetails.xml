@@ -19,9 +19,9 @@
     <filename>error.php</filename>
   </files>
   <positions>
-    <position>position-1</position>
-    <position>position-2</position>
-    <position>position-3</position>
+    <position>navigation</position>
+    <position>header</position>
+    <position>footer</position>
     <position>debug</position>
   </positions>
 

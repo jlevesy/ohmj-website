@@ -10,7 +10,7 @@ defined('_JEXEC') or die( 'Restricted Access')
           href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/app.css" type="text/css" />
   </head>
   <body>
-    <?php if ($this->countModules('position-1')): ?>
+    <?php if ($this->countModules('navigation')): ?>
       <nav class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
         <div class="container">
           <div class="navbar-header">
@@ -32,11 +32,16 @@ defined('_JEXEC') or die( 'Restricted Access')
         </div>
       </nav>
     <?php endif; ?>
+    <div class="header">
+      <jdoc:include type="modules" name="header" style="none"/>
+    </div>
+    <div class="container featurette-content">
+      <jdoc:include type="component" />
+    </div>
+    <jdoc:include type="modules" name="footer" style="none" />
     <jdoc:include type="message" />
-    <jdoc:include type="modules" name="position-2" />
-    <jdoc:include type="component" />
-    <jdoc:include type="modules" name="position-3" />
     <jdoc:include type="modules" name="debug" style="none" />
+
     <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.min.js"></script>
     <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/scroll-watcher.js"></script>
