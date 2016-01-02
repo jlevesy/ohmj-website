@@ -28,7 +28,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('fonts', function() {
-  return gulp.src('bower_components/bootstrap/fonts/*')
+  return gulp.src('node_modules/bootstrap-less/fonts/*')
     .pipe(gulp.dest('dist/static/fonts'))
     .pipe(gulp.dest('dist/joomla/fonts'));
 });
@@ -49,8 +49,14 @@ gulp.task('html', function() {
 });
 
 gulp.task('php', function() {
-  return gulp.src('src/php/**/*.php')
-             .pipe(gulp.dest('dist/joomla'))
+  return gulp.src(['src/php/**/*.php', '!src/php/modules/**'])
+             .pipe(gulp.dest('dist/joomla'));
+});
+
+
+gulp.task('php-carousel', function() {
+  return gulp.src('src/php/modules/**/*')
+             .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('assets', function() {
@@ -58,14 +64,14 @@ gulp.task('assets', function() {
              .pipe(gulp.dest('dist/joomla'))
 });
 
-gulp.task('build', ['html', 'php', 'assets', 'images', 'fonts', 'js', 'less']);
+gulp.task('build', ['html', 'php', 'php-carousel', 'assets', 'images', 'fonts', 'js', 'less']);
 
 gulp.task('watch', function() {
-  gulp.watch('src/less/**/*.less', ['build']);
-  gulp.watch('src/static/*.html', ['build']);
-  gulp.watch('src/php/**/*.php', ['build']);
-  gulp.watch('src/js/**/*.js', ['build']);
-  gulp.watch('src/assets/**/*', ['build']);
+  gulp.watch('src/less/**/*.less', ['less']);
+  gulp.watch('src/static/*.html', ['html']);
+  gulp.watch('src/php/**/*.php', ['php', 'php-carousel']);
+  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/assets/**/*', ['assets']);
 });
 
 gulp.task('clean', function() {
