@@ -4,7 +4,7 @@ class ModOhmjCarouselHelper {
   public static function getFeaturedArticles($limit) {
     $db = JFactory::getDbo();
     $query = $db->getQuery(true)
-      ->select($db->quoteName(array('title', 'modified', 'introtext', 'slug', 'catid', 'language'))
+      ->select($db->quoteName(array('title', 'modified', 'introtext', 'catid', 'language')))
       ->from($db->quoteName('#__content'))
       ->where('featured = 1')
       ->order('modified DESC')
