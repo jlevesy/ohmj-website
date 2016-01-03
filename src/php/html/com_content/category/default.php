@@ -11,4 +11,3 @@ $cfg = JFactory::getConfig();
     <p><span class="glyphicon glyphicon-menu-down"></span></p>
     <hr>
 </div>
-<?php ?>
