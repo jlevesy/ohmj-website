@@ -7,7 +7,7 @@ class ModOhmjCarouselHelper {
       ->select($db->quoteName(array('id', 'title', 'modified', 'introtext', 'images', 'urls')))
       ->from($db->quoteName('#__content'))
       ->where('featured = 1')
-      ->order('modified ASC')
+      ->order('modified DESC')
       ->setLimit($limit);
 
     $db->setQuery($query);

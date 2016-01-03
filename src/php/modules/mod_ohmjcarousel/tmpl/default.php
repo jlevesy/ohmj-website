@@ -1,6 +1,7 @@
 <?php  defined('_JEXEC') or die; ?>
 <?php
-  $items = ModOhmjCarouselHelper::getFeaturedArticles(3);
+  $count = $params->get('count', 3);
+  $items = ModOhmjCarouselHelper::getFeaturedArticles($count);
 ?>
 <?php if (!empty($items)) : ?>
   <div id="main-carousel"

@@ -15,5 +15,17 @@
     <filename>tmpl/index.html</filename>
   </files>
   <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field
+          name="count"
+          type="integer"
+          label="Total articles to show"
+          default="3"
+          first="1"
+          last="5"
+          step="1" />
+      </fieldset>
+    </fields>
   </config>
 </extension>
