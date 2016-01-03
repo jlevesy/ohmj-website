@@ -37,8 +37,8 @@ defined('_JEXEC') or die( 'Restricted Access')
     </div>
     <div class="container featurette-content">
       <jdoc:include type="component" />
+      <jdoc:include type="modules" name="footer" style="none" />
     </div>
-    <jdoc:include type="modules" name="footer" style="none" />
     <jdoc:include type="message" />
     <jdoc:include type="modules" name="debug" style="none" />
 

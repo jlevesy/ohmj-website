@@ -1,8 +1,8 @@
 .featurette-content {
   position: relative;
   background-color: #fff;
-  border: 1px solid #fafafa;
   margin-top: -100px;
+  margin-bottom: 50px;
   box-shadow: 0 10px 10px -6px #777;
 
   hr {
@@ -11,17 +11,24 @@
   }
 
   .featurette {
-    .featurette-image {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
     h1, h2, h3 {
       margin-top: 35px;
     }
 
+    p {
+      text-align: justify;
+    }
+
     span.glyphicon-menu-down {
       margin-top: 50px;
+      margin-bottom: 10px;
     }
+  }
+
+  .footer {
+    margin-top: 50px;
+    padding-top: 10px;
+    background-color: @navbar-inverse-bg;
+    color: @navbar-inverse-color;
   }
 }
