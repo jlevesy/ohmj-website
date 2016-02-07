@@ -1,11 +1,10 @@
-@big-carousel-height: 600px;
+@big-carousel-height: 100%;
 
 .big-carousel {
   height: @big-carousel-height;
 
   .item {
     height: @big-carousel-height;
-    background-color: @black;
   }
 
   .carousel-indicators {
@@ -28,12 +27,22 @@
     h1, h2, h3, h4, h4, p, li {
       margin-top: @padding-large-vertical;
       color: @white;
+
+      a {
+        color: @white;
+        &:hover, &:focus {
+          color: @gray-lighter;
+          text-decoration: none;
+        }
+      }
     }
     position: absolute;
     padding: @padding-large-vertical;
     max-width: 400px;
+    max-height: 300px;
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid @gray-dark;
+    overflow: hidden;
   }
 
   .carousel-caption {
