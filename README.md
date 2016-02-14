@@ -20,6 +20,7 @@ It currently bundles
 ## How to see the static website
 
 - `npm install`
+- `npm install --global gulp`
 - `gulp`
 - Now connect to `http://localhost:8000` with your browser and that's pretty much it :)
 
