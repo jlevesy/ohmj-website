@@ -19,7 +19,7 @@ $doc->addStylesheet($template . '/css/app.css')
   </head>
   <body>
     <?php if ($this->countModules('navigation')): ?>
-      <nav class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
+      <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
         <div class="container">
           <div class="navbar-header">
             <button type="button"
