@@ -1,13 +1,21 @@
 <?php
-defined('_JEXEC') or die( 'Restricted Access')
+defined('_JEXEC') or die( 'Restricted Access');
+// Variables
+$doc = JFactory::getDocument();
+$template = 'templates/' . $this->template;
+
+// Remove included scripts
+$this->_script = $this->_scripts = array();
+
+// Add our app.css file
+$doc->addStylesheet($template . '/css/app.css')
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xml:lang="<?php echo $this->language; ?>"
       lang="<?php echo $this->language; ?>"
       dir="<?php echo $this->direction; ?>">
   <head>
-    <link rel="stylesheet"
-          href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/app.css" type="text/css" />
+    <jdoc:include type="head" />
   </head>
   <body>
     <?php if ($this->countModules('navigation')): ?>
@@ -42,8 +50,8 @@ defined('_JEXEC') or die( 'Restricted Access')
     <jdoc:include type="message" />
     <jdoc:include type="modules" name="debug" style="none" />
 
-    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.min.js"></script>
-    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/scroll-watcher.js"></script>
+    <script src="<?php echo $template ?>/js/jquery.min.js"></script>
+    <script src="<?php echo $template ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo $template ?>/js/scroll-watcher.js"></script>
   </body>
 </html>
