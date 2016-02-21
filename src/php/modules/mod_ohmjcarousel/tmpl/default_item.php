@@ -6,7 +6,7 @@ $images = json_decode($item->images);
   <div class="container" style="background-image: url(<?php echo $images->image_intro;?>);">
     <div class="carousel-panel carousel-panel-top carousel-panel-<?php echo (($item_idx % 2) == 0 ? "left" : "right") ?>">
       <h1>
-        <a href="<?php echo JRoute::_('index.php?option=com_content&view=article&id='.$item->id); ?>">
+        <a href="<?php echo '/index.php?option=com_content&view=article&id='.$item->id?>">
           <?php echo $item->title; ?>
         </a>
       </h1>
