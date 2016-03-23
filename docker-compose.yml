@@ -7,6 +7,7 @@ joomla:
   volumes:
     - ./dist/joomla:/var/www/html/templates/ohmj
     - ./dist/mod_ohmjcarousel:/var/www/html/modules/mod_ohmjcarousel
+    - ./dist/mod_ohmjcarousel:/var/www/html/modules/mod_firstmodule
 
 joomladb:
   image: mysql:5.6
