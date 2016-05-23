@@ -8,7 +8,6 @@ $params = $this->item->params;
       <?php echo $this->escape($this->item->title); ?>
     </h2>
     <?php echo $this->item->introtext; ?>
-
     <?php
       if ($this->item->readmore) :
         $link = JRoute::_(ContentHelperRoute::getArticleRoute(
