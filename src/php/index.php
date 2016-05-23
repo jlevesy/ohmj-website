@@ -2,6 +2,7 @@
 defined('_JEXEC') or die( 'Restricted Access');
 // Variables
 $doc = JFactory::getDocument();
+$cfg = JFactory::getConfig();
 $template = 'templates/' . $this->template;
 
 // Remove included scripts
@@ -33,7 +34,9 @@ $doc->addStylesheet($template . '/css/app.css')
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          <a class="navbar-brand" href="#">OHMJ</a>
+          <div class="navbar-brand">
+            <?php echo $cfg->get('sitename'); ?>
+          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <jdoc:include type="modules" name="navigation" style="none" />
