@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 $params = $this->item->params;
 ?>
-<div class="row featurette">
+<div class="item">
   <div class="col-xs-12">
     <h2 class="text-center">
       <?php echo $this->escape($this->item->title); ?>

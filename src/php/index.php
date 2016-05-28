@@ -46,7 +46,7 @@ $doc->addStylesheet($template . '/css/app.css')
     <div class="header">
       <jdoc:include type="modules" name="header" style="none"/>
     </div>
-    <div class="container featurette-content">
+    <div class="content">
       <jdoc:include type="component" />
       <jdoc:include type="modules" name="footer" style="none" />
     </div>

@@ -1,11 +1,18 @@
-.featurette-content {
+.content {
+  .container();
+
   position: relative;
   background-color: #fff;
   margin-top: -100px;
   margin-bottom: 50px;
   box-shadow: 0 8px 18px -2px #777;
 
-  .featurette {
+  .item{
+    .make-row();
+
+    padding-bottom: 28px;
+    border-bottom: 1px solid @gray-lighter;
+
     p {
       text-align: justify;
     }
@@ -26,7 +33,6 @@
 
   .footer {
     .text-center();
-    margin-top: 50px;
     padding-top: 10px;
     background-color: @navbar-default-bg;
     color: @white;
