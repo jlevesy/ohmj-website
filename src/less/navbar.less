@@ -1,6 +1,22 @@
 .navbar {
-  transition: background .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
   transition: padding .2s ease-in-out;
+
+  span.caret {
+    margin-left: 10px;
+  }
+
+
+  .dropdown-menu {
+    a {
+      color: 000;
+
+      &:hover, &:active, &:focus {
+        color: #fff;
+        background-color: @brand-primary !important;
+      }
+    }
+  }
 }
 
 .navbar-transparent {
@@ -8,9 +24,9 @@
   padding: 15px;
   border: 0px;
 
-  .active {
+  .active, .open {
     a {
-      background-color: transparent !important;
+      background-color: rgba(255,255,255, 0.3) !important;
     }
   }
 }
