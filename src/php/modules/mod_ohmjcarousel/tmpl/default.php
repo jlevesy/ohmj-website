@@ -17,7 +17,7 @@
             <?php echo ($indic_idx == 0 ? 'class="active"' : '') ?>>
         </li>
       <?php $indic_idx++; ?>
-      <? endforeach; ?>
+      <?php endforeach; ?>
     </ol>
     <div class="carousel-inner" role="listbox">
       <?php $item_idx = 0; ?>
