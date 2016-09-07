@@ -1,5 +1,5 @@
 <?php defined('_JEXEC') or die; ?>
-<ul class="nav navbar-nav navbar-right"<?php
+<ul class="nav navbar-nav navbar-left"<?php
 $tag = '';
 
 if ($params->get('tag_id') != null)

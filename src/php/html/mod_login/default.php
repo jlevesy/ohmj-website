@@ -4,7 +4,7 @@ require_once JPATH_SITE . '/components/com_users/helpers/route.php';
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
 ?>
-<form class="navbar-form navbar-right hidden-xs hidden-sm"
+<form class="navbar-form navbar-right login-form"
       method="post"
       action="<?php echo JRoute::_(htmlspecialchars(JUri::getInstance()->toString()), true, $params->get('usesecure')); ?>">
   <div class="form-group">
@@ -17,5 +17,5 @@ JHtml::_('bootstrap.tooltip');
   <input type="hidden" name="task" value="user.login" />
   <input type="hidden" name="return" value="<?php echo $return; ?>" />
   <?php echo JHtml::_('form.token'); ?>
-  <button type="submit" class="btn btn-default"><?php echo JText::_('JLOGIN') ?></button>
+  <button type="submit" class="btn btn-primary"><?php echo JText::_('JLOGIN') ?></button>
 </form>
