@@ -35,10 +35,11 @@ $doc->addStylesheet($template . '/css/app.css')
               <span class="icon-bar"></span>
             </button>
           <div class="navbar-brand">
-            <?php echo $cfg->get('sitename'); ?>
+            <img src="<?php echo $template ?>/images/logo.jpg">
           </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+          <p class="navbar-text navbar-left"><?php echo $cfg->get('sitename'); ?></p>
           <jdoc:include type="modules" name="navigation" style="none" />
         </div>
       </nav>
