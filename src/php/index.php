@@ -21,7 +21,7 @@ $doc->addStylesheet($template . '/css/app.css')
   <body>
     <?php if ($this->countModules('navigation')): ?>
       <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
             <button type="button"
                     class="navbar-toggle collapsed"
@@ -47,10 +47,10 @@ $doc->addStylesheet($template . '/css/app.css')
       <jdoc:include type="modules" name="header" style="none"/>
     </div>
     <div class="content">
+      <jdoc:include type="message" />
       <jdoc:include type="component" />
       <jdoc:include type="modules" name="footer" style="none" />
     </div>
-    <jdoc:include type="message" />
     <jdoc:include type="modules" name="debug" style="none" />
 
     <script src="<?php echo $template ?>/js/jquery.min.js"></script>
