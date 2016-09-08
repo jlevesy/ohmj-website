@@ -17,6 +17,7 @@ $doc->addStylesheet($template . '/css/app.css')
       dir="<?php echo $this->direction; ?>">
   <head>
     <jdoc:include type="head" />
+    <script src="/media/plugin_googlemap3/site/googlemaps/googlemapsv3.js" type="text/javascript"></script>
   </head>
   <body>
     <?php if ($this->countModules('navigation')): ?>
